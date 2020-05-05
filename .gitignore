@@ -1,0 +1,3 @@
+# Project exclude paths
+/spring-boot-web/target/
+/spring-document/target/
