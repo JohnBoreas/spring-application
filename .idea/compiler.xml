@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="work-diary" />
-        <module name="work-document" />
         <module name="java-document" />
         <module name="java-tools" />
+        <module name="javatools" />
         <module name="message-queue" />
         <module name="spring-boot-mq" />
         <module name="spring-document" />
+        <module name="work-diary" />
+        <module name="work-document" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
