@@ -6,11 +6,32 @@ MQ是为什么而使用
 
 
 
-
-
 RabbitMQ 是实现 AMQP，即 Advanced Message Queuing Protocol，高级消息队列协议，是应用层协议的一个开放标准，为面向消息的中间件设计
 
 AMQP 的主要特征是面向消息、队列、路由（包括点对点和发布/订阅）、可靠性、安全。
+
+```powershell
+基本概念：
+Broker： 简单来说就是消息队列服务器实体
+Exchange： 消息交换机，它指定消息按什么规则，路由到哪个队列
+Queue： 消息队列载体，每个消息都会被投入到一个或多个队列
+Binding： 绑定，它的作用就是把exchange和queue按照路由规则绑定起来
+Routing Key： 路由关键字，exchange根据这个关键字进行消息投递
+VHost： vhost 可以理解为虚拟 broker ，即 mini-RabbitMQ server。其内部均含有独立的 queue、exchange 和 binding 等，但最最重要的是，其拥有独立的权限系统，可以做到 vhost 范围的用户控制。当然，从 RabbitMQ 的全局角度，vhost 可以作为不同权限隔离的手段（一个典型的例子就是不同的应用可以跑在不同的 vhost 中）。
+Producer： 消息生产者，就是投递消息的程序
+Consumer： 消息消费者，就是接受消息的程序
+Channel： 消息通道，在客户端的每个连接里，可建立多个channel，每个channel代表一个会话任务
+```
+
+2、使用场景
+
+（1）服务间异步通信
+
+（2）顺序消费
+
+（3）定时任务
+
+（4）请求削峰
 
 
 
