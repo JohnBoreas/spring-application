@@ -8,7 +8,7 @@ import urlparser
 import pdb
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
-from PIL import Image
+from PIL import Imagep
 from io import BytesIO
 class Bilibili(object):
     """docstring for Bilibili"""
