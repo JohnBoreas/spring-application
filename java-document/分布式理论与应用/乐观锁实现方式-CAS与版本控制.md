@@ -50,13 +50,22 @@ public final int incrementAndGet() {
             return next;
     }
 }
+// 最终实现
+cmpxchg=cas修改变量值
+lock cmpxchg 指令（lock是当前cpu在执行此命令时候其他cpu不能打断该操作）
+// 硬件
+lock执行时候是锁定了一个北桥信号而非总线
 ```
 
-CAS
-
-是英文单词CompareAndSwap的缩写，中文意思是：比较并替换。CAS需要有3个操作数：内存地址V，旧的预期值A，即将要更新的目标值B。
+CAS是英文单词CompareAndSwap的缩写，中文意思是：比较并替换。CAS需要有3个操作数：内存地址V，旧的预期值A，即将要更新的目标值B。
 
 CAS指令执行时，当且仅当内存地址V的值与预期值A相等时，将内存地址V的值修改为B，否则就什么都不做。整个比较并替换的操作是一个原子操作。
+
+<img src="../resource/compareandswap.png" style="zoom:80%;" />
+
+linux源码：
+
+<img src="../resource/atomicInteger-linux.png" style="zoom:100%;" />
 
 
 
