@@ -6,9 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java-document" />
         <module name="java-tools" />
-        <module name="javatools" />
+        <module name="java-web" />
         <module name="message-queue" />
         <module name="spring-boot-mq" />
         <module name="spring-document" />

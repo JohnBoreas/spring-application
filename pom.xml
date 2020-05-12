@@ -15,6 +15,7 @@
         <module>message-queue</module>
         <module>spring-boot-mq</module>
         <module>java-document</module>
+        <module>java-web</module>
         <module>work-document</module>
     </modules>
 
