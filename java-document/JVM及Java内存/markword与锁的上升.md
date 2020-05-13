@@ -36,6 +36,8 @@ Object object = new Object()；刚开始new出来一个对象是无锁状态
 
 <img src="../resource/synchronize的锁升级hotspot实现.png" style="zoom:80%;" />
 
+
+
 ##### 3、四种锁的定义
 
 ```shell
