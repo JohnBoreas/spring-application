@@ -2,6 +2,14 @@
 
 （1）是如何实现的？
 
+1、Java代码：synchronized
+
+2、class文件：monitorenter moniterexit
+
+3、执行过程中自动升级
+
+4、汇编：lock comxchg
+
 ```shell
 ## 原理
 JVM 是通过进入、退出对象监视器( Monitor )来实现对方法、同步块的同步的。
