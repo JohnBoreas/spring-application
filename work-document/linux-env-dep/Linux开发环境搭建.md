@@ -13,7 +13,10 @@
 （3）使用Vi编辑器，设置环境变量
 ​ $ sudo vi /etc/profile
 ​ 在文件最后，添加如下内容：
-\#Java Env export JAVA_HOME=/usr/jdk1.8.0_121 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar export PATH=$PATH:$JAVA_HOME/bin
+#Java Env 
+export JAVA_HOME=/usr/jdk1.8.0_121 
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+export PATH=$PATH:$JAVA_HOME/bin
 
 （4）退出vi编辑器，并保存，输入命令使环境变量设置立即生效
 ​ $ source /etc/profile
