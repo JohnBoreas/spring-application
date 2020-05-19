@@ -1,8 +1,10 @@
 1、保证线程可见性
 
+2、防止指令重排
 
+问题：DCL（double check lock）单例需不需要加volatile
 
-
+<img src="../resource/DCL单例与volatile.png" style="zoom: 50%;" />
 
 4、乱序执行
 
@@ -29,3 +31,12 @@
 
 
 volatile如何解决指令重排序
+
+1、volatile i
+
+2、ACC_VOLATILE
+
+3、JVM的内存屏障
+
+4、hotspot实现
+
