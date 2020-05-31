@@ -6,7 +6,7 @@ MESL（缓存一致性）
 
 一致性协议用于保证多个CPU cache之间缓存共享数据的一致。
 
-<img src="D:/spring-application/java-document/resource/MESI.png" style="zoom:80%;" />
+<img src="../resource/MESI.png" style="zoom:80%;" />
 
 MESI协议将cache line的状态分成modify、exclusive、shared、invalid，分别是修改、独占、共享和失效。
 
@@ -41,15 +41,15 @@ L1分成了指令（L1P）和数据（L1D）两部分，而L2则是指令和数�
 
 L1和L2是CPU私有的，L3则是所有CPU核心共享的。
 
-<img src="D:/spring-application/java-document/resource/多核CPU-cache结构.png" alt="多核CPU-cache结构.png" style="zoom:75%;" />
+<img src="../resource/多核CPU-cache结构.png" alt="多核CPU-cache结构.png" style="zoom:75%;" />
 
 3、cache消耗的时间（单位：时钟周期）
 
-<img src="D:/spring-application/java-document/resource/java-cache-cost-time.png" style="zoom:67%;" />
+<img src="../resource/java-cache-cost-time.png" style="zoom:67%;" />
 
 4、cache的基本结构原理图
 
-<img src="D:/spring-application/java-document/resource/cache基本结构原理框图.png" style="zoom:80%;" />
+<img src="../resource/cache基本结构原理框图.png" style="zoom:80%;" />
 
 三、cache line缓存行概念
 
@@ -57,7 +57,7 @@ cache line是cache与内存数据交换的最小单位，根据操作系统一�
 
 在MESI协议中，状态可以是M、E、S、I，地址则是cache line中映射的内存地址，数据则是从内存中读取的数据。
 
-<img src="D:/spring-application/java-document/resource/cache-line结构.png" style="zoom:75%;" />
+<img src="../resource/cache-line结构.png" style="zoom:75%;" />
 
 1、工作方式：当CPU从cache中读取数据的时候，会比较地址是否相同，如果相同则检查cache line的状态，再决定该数据是否有效，无效则从主存中获取数据，或者根据一致性协议发生一次cache-to--chache的数据推送
 
@@ -69,17 +69,17 @@ cpu在读数据时候是以块为单位读，
 
 volatile也是对数据以块来处理，64字节为一缓存行，以行为单位
 
-<img src="D:/spring-application/java-document/resource/cacheline.png" style="zoom:80%;" />
+<img src="../resource/cacheline.png" style="zoom:80%;" />
 
 四、操作系统
 
 （1）计算机组成
 
-<img src="D:/spring-application/java-document/resource/计算机组成.png" style="zoom:80%;" />
+<img src="../resource/计算机组成.png" style="zoom:80%;" />
 
 （2）存储结构
 
-<img src="D:/spring-application/java-document/resource/存储器的层次结构.png" style="zoom:60%;" />
+<img src="../resource/存储器的层次结构.png" style="zoom:60%;" />
 
 
 

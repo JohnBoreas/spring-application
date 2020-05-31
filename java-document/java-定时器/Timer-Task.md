@@ -1,5 +1,9 @@
 1、Timer使用
 
+本身线程安全
+
+由一个队列、一个线程组成
+
 ```java
 Timer timer = new Timer();
 TimerTask task = new TimerTask() {
