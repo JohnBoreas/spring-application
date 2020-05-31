@@ -23,7 +23,21 @@ npm install -g appium@1.5
 npm install -g appium-doctor
 检验：cmd：appium-doctor
 
-或者：npm install appium –g
+或者：npm install appium –g(国外很慢)
+
+new:
+## 使用国内镜像
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+## 安装最新版本
+cnpm install -g appium  # 安装指定版本 cnpm install appium@1.7.2 -g
+## 查看版本
+appium -v
+## 安装Appium-Python-Client（不需要）
+pip install Appium-Python-Client
+## 安装 appium-doctor
+cnpm install appium-doctor -g
+## 检查appium-doctor
+appium-doctor
 
 5、安装Android Interface
 （如果adb devices无法识别或者adb interface有黄色感叹号）
