@@ -14,6 +14,7 @@ Ctrl+F/Ctrl+Shift+F	全局中查找
 Shift+Shift	查看其中的任意文件
 
 Ctrl+Alt+L	格式化代码快捷键
+Ctrl+Alt+shift+C	复制包名类名
 
 sout	System.out.println();
 fori	自动创建一个for循环
@@ -63,11 +64,13 @@ IDEA中的`.iml`文件是项目标识文件，缺少了这个文件，IDEA就无
 
 
 
-IDEA2020使用爬坑
+**IDEA2020使用爬坑**
 
 ```shell
-1、运行找不到程序包和符号，其他版本idea可以
+1、运行maven项目，找不到程序包和符号，其他版本idea可以
 maven自己加的localRepository删掉，用默认的，如果不想下在C盘，就在idea手动修改本地仓库的配置。
 2、
 ```
+
+
 
