@@ -11,9 +11,6 @@
 
     <artifactId>java-document</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>../javaweb</module>
-    </modules>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
@@ -29,7 +26,21 @@
             <artifactId>jol-core</artifactId>
             <version>0.10</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
 
+        <!-- 爬虫 -->
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.29</version>
+        </dependency>
     </dependencies>
 
 </project>
