@@ -15,7 +15,7 @@ public class ScheduledExecutorServiceTest {
 
     public void scheduledExecutor() {
         /**
-         * Runnable：实现了Runnable接口，jdk就知道这个类是一个线程
+         * Runnable：实现了Runnable接口
          */
         Runnable runnable = new Runnable() {
             //创建 run 方法

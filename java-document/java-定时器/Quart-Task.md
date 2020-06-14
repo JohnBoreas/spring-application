@@ -71,6 +71,7 @@ public class QuartzSchedulerThread extends Thread {
                     long now = System.currentTimeMillis();
                     clearSignaledSchedulingChange();
                     try {
+                        // 获取最近需要执行的任务列表（30s内的将要执行的任务）。然后根据执行时间进行排序，然后计算出需要wait()的时间。当调度时间来临，欢迎主线程，将任务交给一个线程池进行执行。
                         triggers = qsRsrcs.getJobStore().acquireNextTriggers(
                                 now + idleWaitTime, Math.min(availThreadCount, qsRsrcs.getMaxBatchSize()), qsRsrcs.getBatchTimeWindow());
                         lastAcquireFailed = false;
@@ -120,13 +121,12 @@ public class QuartzSchedulerThread extends Thread {
                             now = System.currentTimeMillis();
                             timeUntilTrigger = triggerTime - now;
                         }
-
-                        // this happens if releaseIfScheduleChangedSignificantly decided to release triggers
+   // this happens if releaseIfScheduleChangedSignificantly decided to release triggers
                         if(triggers.isEmpty())
                             continue;
 
                         // set triggers to 'executing'
-                        List<TriggerFiredResult> bndles = new ArrayList<TriggerFiredResult>();
+                   List<TriggerFiredResult> bndles = new ArrayList<TriggerFiredResult>();
 
                         boolean goAhead = true;
                         synchronized(sigLock) {
@@ -180,10 +180,10 @@ public class QuartzSchedulerThread extends Thread {
                             }
 
                             if (qsRsrcs.getThreadPool().runInThread(shell) == false) {
-                                // this case should never happen, as it is indicative of the
-                                // scheduler being shutdown or a bug in the thread pool or
-                                // a thread pool being used concurrently - which the docs
-                                // say not to do...
+      // this case should never happen, as it is indicative of the
+      // scheduler being shutdown or a bug in the thread pool or
+      // a thread pool being used concurrently - which the docs
+      // say not to do...
                                 getLog().error("ThreadPool.runInThread() return false!");
                                 qsRsrcs.getJobStore().triggeredJobComplete(triggers.get(i), bndle.getJobDetail(), CompletedExecutionInstruction.SET_ALL_JOB_TRIGGERS_ERROR);
                             }
@@ -193,20 +193,20 @@ public class QuartzSchedulerThread extends Thread {
                         continue; // while (!halted)
                     }
                 } else { // if(availThreadCount > 0)
-                    // should never happen, if threadPool.blockForAvailableThreads() follows contract
+       // should never happen, if threadPool.blockForAvailableThreads() follows contract
                     continue; // while (!halted)
                 }
-
+// 30秒内没有需要执行的任务，则等待一个随机时间。getRandomizedIdleWaitTime产生一个30秒内随机等待时间。
                 long now = System.currentTimeMillis();
                 long waitTime = now + getRandomizedIdleWaitTime();
                 long timeUntilContinue = waitTime - now;
                 synchronized(sigLock) {
                     try {
                       if(!halted.get()) {
-                        // QTZ-336 A job might have been completed in the mean time and we might have
-                        // missed the scheduled changed signal by not waiting for the notify() yet
-                        // Check that before waiting for too long in case this very job needs to be
-                        // scheduled very soon
+           // QTZ-336 A job might have been completed in the mean time and we might have
+           // missed the scheduled changed signal by not waiting for the notify() yet
+           // Check that before waiting for too long in case this very job needs to be
+           // scheduled very soon
                         if (!isScheduleChanged()) {
                           sigLock.wait(timeUntilContinue);
                         }
