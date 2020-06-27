@@ -7,6 +7,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ *
  * @author boreas
  * @create 2020-06-14 21:45
  */
@@ -17,20 +18,26 @@ public class ConditionTest {
 
     public static void main(String[] args) {
         ConditionTest useCase = new ConditionTest();
+        useCase.objectTest();
+    }
+
+    public void conditionTest() {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                useCase.conditionWait();
+                conditionWait();
             }
         });
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                useCase.conditionSignal();
+                conditionSignal();
             }
         });
+        executorService.shutdown();
     }
+
 
     public void conditionWait() {
         lock.lock();
@@ -59,6 +66,48 @@ public class ConditionTest {
 
         } finally {
             lock.unlock();
+        }
+    }
+
+    public void objectTest() {
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                objectWait();
+            }
+        });
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                objectNotify();
+            }
+        });
+        executorService.shutdown();
+    }
+
+    public void objectWait() {
+        synchronized (this) {
+            try {
+                System.out.println(Thread.currentThread().getName() + "拿到锁了");
+                System.out.println(Thread.currentThread().getName() + "等待信号");
+                this.wait();
+                System.out.println(Thread.currentThread().getName() + "拿到信号");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void objectNotify() {
+        synchronized (this) {
+            try {
+                Thread.sleep(5000);
+                System.out.println(Thread.currentThread().getName() + "拿到锁了");
+                this.notify();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
