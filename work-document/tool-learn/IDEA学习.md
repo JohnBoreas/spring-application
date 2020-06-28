@@ -16,6 +16,8 @@ Shift+Shift	查看其中的任意文件
 Ctrl+Alt+L	格式化代码快捷键
 Ctrl+Alt+shift+C	复制包名类名
 
+Ctrl+Alt+shift+U	查看图形形式的继承链
+
 sout	System.out.println();
 fori	自动创建一个for循环
 psvm	public static void main

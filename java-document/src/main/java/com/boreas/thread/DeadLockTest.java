@@ -37,7 +37,7 @@ public class DeadLockTest {
                 }
                 System.out.println(Thread.currentThread() + "waiting get resourceOne");
                 synchronized (resourceOne) {
-                    System.out.println(Thread.currentThread() + "get resource1");
+                    System.out.println(Thread.currentThread() + "get resourceOne");
                 }
             }
         }, "线程 2").start();
