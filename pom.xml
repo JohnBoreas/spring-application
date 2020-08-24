@@ -17,6 +17,7 @@
         <module>java-document</module>
         <module>java-web</module>
         <module>work-document</module>
+        <module>sql-document</module>
     </modules>
 
     <properties>
