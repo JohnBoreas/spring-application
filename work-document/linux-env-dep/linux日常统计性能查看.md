@@ -22,6 +22,8 @@ Java查看
 sudo chmod -R 777 文件
 ```
 
+
+
 如何在 Windows 和 Linux 上查找哪个线程cpu利用率最高？
 
 windows上面用任务管理器看，linux下可以用 top 这个工具看。
