@@ -42,7 +42,22 @@ StoreLoadBarrier	  LoadStoreBarrier
 
 指令重排
 
+指令重排序是为了优化指令，提高程序运行效率。包括编译器重排序和运行时重排序
 
+JVM规范规定，指令重排序可以在不影响单线程程序执行结果前提下进行。
+
+```shell
+#### new Object()
+memory = allocate();   //1：分配对象的内存空间
+ctorInstance(memory);  //2：初始化对象
+instance = memory;     //3：设置instance指向刚分配的内存地址
+
+#### 经过指令重排序
+memory = allocate();   //1：分配对象的内存空间
+instance = memory;     //3：设置instance指向刚分配的内存地址
+                       //注意，此时对象还没有被初始化！
+ctorInstance(memory);  //2：初始化对象
+```
 
 
 
@@ -86,7 +101,7 @@ JMM 为了保证在不同的编译器和 CPU 上有相同的结果，通过插�
 
 ```
 
-![读插入内存屏障](E:/project/spring-application/java-document/resource/volatile 读插入内存屏障.png)      ![](E:/project/spring-application/java-document/resource/volatile 写插入内存屏障.png)
+![读插入内存屏障](../../resource/volatile 读插入内存屏障.png)      ![](../../resource/volatile 写插入内存屏障.png)
 
 （2）happens-before原则：
 
