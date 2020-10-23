@@ -20,9 +20,24 @@ appium-doctor
 ##### 2、查找Activity包
 
 ```shell
-adb shell dumpsys activity activities >C:\Users\xxx\Desktop\aa.txt
+###命令
+adb shell dumpsys activity activities > C:\Users\xxx\Desktop\aa.txt
 或者
 adb shell
 dumpsys activity | grep mFocusedActivity
+###############################
+realActivity=com.taobao.taobao/com.taobao.tao.welcome.Welcome
+autoRemoveRecents=false isPersistable=true numFullscreen=1 taskType=0 mTaskToReturnTo=1
+#############################
+ps：
+com.tencent.mm/.ui.LauncherUI
+【/】不需要
+
+##############################################
+##查看包
+adb shell pm list package -f taobao
+##查看activity
+adb shell
+monkey -p 包名 -vvv 1
 ```
 

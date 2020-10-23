@@ -7,13 +7,14 @@
 cpu、内存性能查看
 
 ```shell
-
+top
 ```
 
 Java查看
 
 ```shell
-
+## 进入java安装目录或者命令前面加路径
+jstack -l pid
 ```
 
 赋予权限
