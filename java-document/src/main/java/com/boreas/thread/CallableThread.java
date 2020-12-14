@@ -11,6 +11,7 @@ import java.util.concurrent.*;
 public class CallableThread implements Callable<String> {
     @Override
     public String call() throws Exception {
+        Thread.sleep(50000);
         return "Callable";
     }
 
@@ -26,8 +27,8 @@ public class CallableThread implements Callable<String> {
         String result = null;
         try {
             // 获取线程执行结果
-            result = futureTask.get();
-            futureTask.get(2, TimeUnit.SECONDS);
+//            result = futureTask.get();// 阻塞获取
+            result = futureTask.get(2, TimeUnit.SECONDS);// 超时，但是当前线程不结束
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -35,6 +36,7 @@ public class CallableThread implements Callable<String> {
         } catch (TimeoutException e) {
             e.printStackTrace();
         }
+        System.out.println(thread.isAlive());
         System.out.println(result);
     }
 }
