@@ -25,7 +25,7 @@ jdk1.6以前 synchronized是基于重量锁实现的，即每次遇到同步代�
 jdk1.6之后对其优化，根据不同场景使用不同的策略，偏向锁、轻量锁、重量锁
 ```
 
-![](../resource/synchronize流程图.jpg)
+![](../../resource/synchronize流程图.jpg)
 
 （2）作用
 
@@ -113,7 +113,7 @@ synchronized原语和ReentrantLock在一般情况下没有什么区别，
 synchronized：依赖JVM实现锁，因此在这个关键字作用对象的作用范围内是同一时刻只能有一个线程进行操作；
 LOCK：是JDK提供的代码层面的锁，依赖CPU指令，代表性的是ReentrantLock。
 
-![](../resource/synchronized与Lock的区别.png)
+![](../../resource/synchronized与Lock的区别.png)
 
 synchronized 和 lock 之间关系、不使用 synchronized 如何实现一个线程安全的单例
 

@@ -40,7 +40,7 @@ StoreLoadBarrier	  LoadStoreBarrier
 
 
 
-指令重排
+##### 指令重排
 
 指令重排序是为了优化指令，提高程序运行效率。包括编译器重排序和运行时重排序
 

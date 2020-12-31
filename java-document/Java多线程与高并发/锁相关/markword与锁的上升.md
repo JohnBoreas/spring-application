@@ -34,11 +34,11 @@ Object object = new Object()；刚开始new出来一个对象是无锁状态
 
 ##### 2、markword的存储
 
-<img src="../resource/synchronize的锁升级hotspot实现.png" style="zoom:80%;" />
+<img src="../../resource/synchronize的锁升级hotspot实现.png" style="zoom:80%;" />
 
 
 
-<img src="../resource/java8markword实现.png" style="zoom:80%;" />
+<img src="../../resource/java8markword实现.png" style="zoom:80%;" />
 
 ##### 3、四种锁的定义
 
@@ -56,7 +56,7 @@ Object object = new Object()；刚开始new出来一个对象是无锁状态
 是指当锁为轻量级锁的时候，另一个线程虽然是自旋，但自旋不会一直持续下去，当自旋一定次数的时候，还没有获取到锁，就会进入阻塞，该锁膨胀为重量级锁。重量级锁会让其他申请的线程进入阻塞，性能降低。这时候也就成为了原始的Synchronized的实现。
 ```
 
-4、锁消除Lock eliminate
+##### 4、锁消除Lock eliminate
 
 StringBuffer线程安全，synchronized方法add，stringBuffer只会在add中使用，不被其他线程使用（局部变量，栈私有），sb不可共享资源。JVM自动消除stringBuffer对象内部锁
 
@@ -67,7 +67,7 @@ public void lockEliminate(String str1, String str2) {
     }
 ```
 
-5、锁粗化（Lock coarsening）
+##### 5、锁粗化（Lock coarsening）
 
 JVM检测到一连串加锁操作都是对同一对象，此JVM会将锁的范围粗化到这一连串操作外部，使得只加一次锁
 
