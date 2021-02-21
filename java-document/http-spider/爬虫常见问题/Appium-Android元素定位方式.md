@@ -2,7 +2,7 @@
 
 resrouce-id属性是id：
 
-![img](../resource/Appium-Android元素定位方式-1.png)
+![img](../../resource/Appium-Android元素定位方式-1.png)
 
 
 
@@ -14,7 +14,7 @@ WebElement element = driver.findElement(By.id("com.oupeng.mini.android:id/search
 
 text属性是name
 
-![img](../resource/Appium-Android元素定位方式-2.png)
+![img](../../resource/Appium-Android元素定位方式-2.png)
 
 
 
@@ -28,7 +28,7 @@ WebElement element = driver.findElement(By.name("百度一下或输入网址"));
 
 class属性是classname
 
-![img](../resource/Appium-Android元素定位方式-3.png)
+![img](../../resource/Appium-Android元素定位方式-3.png)
 
 
 
@@ -48,7 +48,7 @@ Appium对于xpath定位执行效率是比较低的，一般情况下尽量不用
 
 #### 5.通过AccessibilityId定位元素
 
-![img](../resource/Appium-Android元素定位方式-4.png)
+![img](../../resource/Appium-Android元素定位方式-4.png)
 
 
 
@@ -74,9 +74,9 @@ WebElement element =driver.findElementByAndroidUIAutomator("new UiSelector().res
 
 （2）在移动端打开一个网页，如下图
 
-![img](../resource/Appium-Android元素定位方式-5.png)（3）点击”inspect”，弹出一个新窗口，如图：
+![img](../../resource/Appium-Android元素定位方式-5.png)（3）点击”inspect”，弹出一个新窗口，如图：
 
-![img](../resource/Appium-Android元素定位方式-6.png)
+![img](../../resource/Appium-Android元素定位方式-6.png)
 
 （4）可以看到手机屏幕上的页面已经PC机上显示，可以看到手机wap页面源码以及UI界面。
 
@@ -86,7 +86,7 @@ WebElement element =driver.findElementByAndroidUIAutomator("new UiSelector().res
 
 保存之后，在CMD中输入：ipconfig /flushdns，然后再重新打开就可以了，操作方式和google浏览器中一样，点击探针去探元素
 
-![img](../resource/Appium-Android元素定位方式-7.png)
+![img](../../resource/Appium-Android元素定位方式-7.png)
 
 通过name定位：
 
@@ -100,7 +100,7 @@ WebElement element = driver.findElement(By.name(“word”));
 
 打开PC chrome浏览器，点击F12，点击toggle device toolbar,刷新下网页就可以实现了，可以切换设备型号及屏幕的大小。
 
-![img](../resource/Appium-Android元素定位方式-8.png)
+![img](../../resource/Appium-Android元素定位方式-8.png)
 
 
 
