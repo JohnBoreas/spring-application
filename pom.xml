@@ -18,6 +18,7 @@
         <module>java-web</module>
         <module>work-document</module>
         <module>sql-document</module>
+        <module>java-senior-pro</module>
     </modules>
 
     <properties>
