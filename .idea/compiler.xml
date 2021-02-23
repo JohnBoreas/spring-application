@@ -10,6 +10,7 @@
         <module name="work-diary" />
         <module name="work-document" />
         <module name="javatools" />
+        <module name="java-senior-pro" />
         <module name="java-tools" />
         <module name="message-queue" />
         <module name="java-web" />

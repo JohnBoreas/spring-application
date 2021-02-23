@@ -88,7 +88,7 @@ typedef struct dict {
 } dict;
 ```
 
-<img src="../resource/redis数据结构.jpg" style="zoom:60%;" />
+<img src="../../java-senior-pro/resource/redis数据结构.jpg" style="zoom:60%;" />
 
 **Redis 对象头结构体**
 
