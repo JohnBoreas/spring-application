@@ -11,6 +11,9 @@
 
     <artifactId>java-document</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>../cnblogs</module>
+    </modules>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
