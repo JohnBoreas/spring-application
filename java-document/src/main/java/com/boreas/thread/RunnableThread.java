@@ -10,7 +10,15 @@ public class RunnableThread implements Runnable {
     @Override
     public void run() {
         System.out.println("RunnableThread");
+        while (true) {
+            try {
+                Thread.sleep(3111);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
     public static void main(String[] args){
         // 线程的执行目标对象
         RunnableThread runnableThread = new RunnableThread();
@@ -18,5 +26,13 @@ public class RunnableThread implements Runnable {
         Thread thread = new Thread(runnableThread);
         // 启动线程
         thread.start();
+        thread.interrupt();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.notify();
+        System.out.println(System.currentTimeMillis() + " end " + thread.isInterrupted() + ", " + thread.isAlive());
     }
 }
