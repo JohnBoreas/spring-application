@@ -92,3 +92,23 @@ nohup java -Xms64m -Xmx512m -XX:PermSize=32m -XX:MaxPermSize=512m -jar $dir$proj
 
 邮箱配置
 
+
+
+
+Jenkins部署问题
+
+1、软件安装
+
+ant：构建普通的项目，需要配置build.xml
+
+maven：maven项目构建
+
+git：需要配置账号密码及key
+
+2、配置
+
+邮件报警配置：构建失败，构建成功
+
+构建配置：构建需要的文件，创建文件夹，打包等
+
+构建后配置：将文件移动部署相关

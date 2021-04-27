@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/diary/pom.xml" />
         <option value="$PROJECT_DIR$/java-tools/pom.xml" />
+        <option value="$PROJECT_DIR$/java-document/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

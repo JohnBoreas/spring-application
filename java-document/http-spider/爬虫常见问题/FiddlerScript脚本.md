@@ -1,4 +1,10 @@
+拦截指定链接
 
+```js
+
+```
+
+设置本地JS，打开页面，强制引用本地JS
 
 ```js
 static function OnBeforeResponse(oSession: Session) {

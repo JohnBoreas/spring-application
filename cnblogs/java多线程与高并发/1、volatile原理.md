@@ -81,3 +81,27 @@ StoreLoadBarrier	  LoadStoreBarrier
 ##### 3.1.内存语义的实现
 
 ​		为了实现volatile的内存语义，JMM 会分别限制编译器重排序和处理器重排序两种类型的重排序类型，通过编译器在生成字节码时，在指令序列中插入内存屏障来禁止特定类型的处理器重排序。
+
+
+
+#### 4. DCL（double check lock）
+
+单例需不需要加volatile
+
+```java
+## 双重检查（double-checked）
+class Singleton {
+    private volatile static Singleton instance;
+    public static Singleton getInstance() {
+        if (instance == null) {
+            syschronized(Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    } 
+}
+```
+

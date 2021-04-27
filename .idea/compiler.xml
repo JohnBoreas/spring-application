@@ -7,25 +7,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sql-document" />
-        <module name="work-diary" />
         <module name="work-document" />
         <module name="javatools" />
-        <module name="java-senior-pro" />
+        <module name="cnblogs" />
         <module name="java-tools" />
         <module name="message-queue" />
         <module name="java-web" />
-        <module name="javaweb" />
+        <module name="java-senior-pro" />
         <module name="spring-boot-mq" />
+        <module name="javaweb" />
         <module name="spring-document" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-application" target="1.5" />
+      <module name="work-diary" target="1.8" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="spring-boot-web" options="" />
-    </option>
   </component>
 </project>
