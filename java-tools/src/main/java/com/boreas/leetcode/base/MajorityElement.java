@@ -28,7 +28,7 @@ public class MajorityElement {
      * @param nums
      * @return
      */
-    public int majorityElementOne(int[] nums) {
+    public int solutionOne(int[] nums) {
         int count = 0;
         int num = nums[0];
         for (int i = 0; i < nums.length; i++) {
@@ -50,7 +50,7 @@ public class MajorityElement {
      * @param nums
      * @return
      */
-    public int majorityElementTwo(int[] nums) {
+    public int solutionTwo(int[] nums) {
         Map<Integer, Integer> numCountMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int count = numCountMap.getOrDefault(nums[i], 0) + 1;

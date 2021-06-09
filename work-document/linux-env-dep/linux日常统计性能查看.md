@@ -13,6 +13,7 @@ top
 Java查看
 
 ```shell
+ps -ef|grep 'tomcat'
 ## 进入java安装目录或者命令前面加路径
 jstack -l pid
 ```

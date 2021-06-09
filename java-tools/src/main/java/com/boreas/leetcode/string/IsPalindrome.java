@@ -15,14 +15,14 @@ package com.boreas.leetcode.string;
  */
 public class IsPalindrome {
 
-    public boolean isPalindrome(String s) {
+    public boolean solution(String s) {
         if (s.length() == 0) {
             return true;
         }
         int left = 0;
         int right = s.length() - 1;
         while (left < right) {
-            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {// 字符被确定是字母或数字
                 left ++;
             }
             while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {

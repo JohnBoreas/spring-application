@@ -16,6 +16,8 @@ public class CountDownLatchTest {
      * @param args
      */
     public static void main(String[] args) {
+        CountDownLatchTest test = new CountDownLatchTest();
+        test.countDownLatchTest();
         ExecutorService pool = Executors.newCachedThreadPool();
         CountDownLatch cdl = new CountDownLatch(100);
         for (int i = 0; i < 100; i++) {
@@ -34,7 +36,7 @@ public class CountDownLatchTest {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(7000);
                     System.out.println("子线程："+Thread.currentThread().getName()+"执行");
                 } catch (InterruptedException e) {
                     e.printStackTrace();

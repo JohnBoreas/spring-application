@@ -13,6 +13,8 @@ Ctrl+Alt+B	查看接口的实现类
 Ctrl+F/Ctrl+Shift+F	全局中查找
 Shift+Shift	查看其中的任意文件
 
+Ctrl + Alt +O 删除无用import
+
 Ctrl+Alt+L	格式化代码快捷键
 Ctrl+Alt+shift+C	复制包名类名
 

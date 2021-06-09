@@ -1,0 +1,27 @@
+多环境配置
+
+```xml
+<profiles>
+    <profile>
+        <id>dev</id>
+        <properties>
+            <profiles.active>dev</profiles.active>
+        </properties>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+    <profile>
+        <id>qa</id>
+        <properties>
+            <profiles.active>qa</profiles.active>
+        </properties>
+    </profile>
+    <profile>
+        <id>product</id>
+        <properties>
+            <profiles.active>product</profiles.active>
+        </properties>
+    </profile>
+</profiles>
+```

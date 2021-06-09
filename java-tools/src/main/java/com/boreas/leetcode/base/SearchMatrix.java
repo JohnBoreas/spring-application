@@ -22,7 +22,7 @@ public class SearchMatrix {
      * @param target
      * @return
      */
-    public boolean searchMatrix(int[][] matrix, int target) {
+    public boolean solution(int[][] matrix, int target) {
         int col = matrix[0].length - 1;
         int row = 0;
         while (col >= 0 && row <= matrix.length - 1) {

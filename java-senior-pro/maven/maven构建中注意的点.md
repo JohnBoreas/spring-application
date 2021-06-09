@@ -33,3 +33,4 @@
 二、<scope>import</scope>
 
 只使用在<dependencyManagement>中，表示从其它的pom中导入dependency的配置
+

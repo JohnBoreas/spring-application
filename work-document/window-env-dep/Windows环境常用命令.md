@@ -4,6 +4,10 @@
 ## windows使用命令行杀进程
 taskkill /im nginx.exe /f
 taskkill /pid {pid}
+
+## windows解决端口占用
+netstat -ano |findstr "8080"
+taskkill /f /t /im {pid}
 ```
 
 
