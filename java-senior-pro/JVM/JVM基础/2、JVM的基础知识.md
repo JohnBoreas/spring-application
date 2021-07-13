@@ -18,7 +18,7 @@ JVM运行在操作系统之上，没有与硬件有直接交互
 
 #### 2、JVM整体结构
 
-#### <img src="E:/project/spring-application/java-senior-pro/resource/JVM结构.png" style="zoom:67%;" />
+<img src="../../resource/JVM结构.png" style="zoom:67%;" />
 
 
 

@@ -117,11 +117,21 @@ org.quartz.threadPool.threadPriority=5
 
 
 
-#### 六、QuartzSchedulerThread线程
+#### 六、quartz运行中的一些问题：
 
-1、先获取线程池中的可用线程数量（若没有可用的会阻塞，直到有可用的）；
+1、报错：ClusterManager: Scanning for instance "SH10361624446416458"'s failed in-progress jobs
 
-2、获取30m内要执行的trigger(即acquireNextTriggers)：
+quartz的常规扫描，用于当终止程序时，好知道哪些任务正在执行，每个job都会生成一个id
+
+下一次job运行会在`NEXT_FIRE_TIME`时候执行，超过该时间在等待时间后立即执行
+
+
+
+#### 七、QuartzSchedulerThread线程
+
+1、先获取线程池中的可用线程数量`availWorkers`（若没有可用的会阻塞，直到有可用的）；
+
+2、获取30m内要执行的trigger `acquireNextTriggers`：
 
 ```
 	获取trigger的锁，通过select …for update方式实现；
@@ -157,7 +167,7 @@ org.quartz.threadPool.threadPriority=5
 ```java
 while (!halted.get()) {
             try {
-                // check if we're supposed to pause...
+                // 锁住当前对象，判断是否暂停
                 synchronized (sigLock) {
                     while (paused && !halted.get()) {
                         try {
@@ -166,19 +176,27 @@ while (!halted.get()) {
                         } catch (InterruptedException ignore) {
                         }
                     }
-
                     if (halted.get()) {
                         break;
                     }
                 }
-
+                // 失败需要休眠一定时间
+                
+                // wait a bit, if reading from job store is consistently
+                // failing (e.g. DB is down or restarting)..
+                if (acquiresFailed > 1) {
+                    try {
+                        long delay = computeDelayForRepeatedErrors(qsRsrcs.getJobStore(), acquiresFailed);
+                        Thread.sleep(delay);
+                    } catch (Exception ignore) {
+                    }
+                }
+                // 获取可用线程数availWorkers
                 int availThreadCount = qsRsrcs.getThreadPool().blockForAvailableThreads();
                 if(availThreadCount > 0) { // will always be true, due to semantics of blockForAvailableThreads...
-
                     List<OperableTrigger> triggers = null;
-
+                    // 获取30m内要执行的trigge
                     long now = System.currentTimeMillis();
-
                     clearSignaledSchedulingChange();
                     try {
                         triggers = qsRsrcs.getJobStore().acquireNextTriggers(

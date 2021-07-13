@@ -78,3 +78,6 @@ maven自己加的localRepository删掉，用默认的，如果不想下在C盘�
 
 
 
+**IDEA实用插件**
+
+1、jclasslib ByteCode Viewer：用于查看字节码

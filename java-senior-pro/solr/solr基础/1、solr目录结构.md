@@ -1,4 +1,4 @@
-1、solr文件夹下内容
+#### 1、solr文件夹下内容
 
 （1）bin
 
@@ -52,7 +52,7 @@ Jetty 库（server/lib）
 
 
 
-2、server/solr/conf文件夹
+#### 2、server/solr/conf文件夹
 
 （1）managed-schema（5.5之前为schema.xml）
 
@@ -64,6 +64,6 @@ Jetty 库（server/lib）
 
 
 
-3、server/solr/lib文件夹
+#### 3、server/solr/lib文件夹
 
 存放code需要引入的包，如：mysql-connector-java-5.0.5-bin.jar

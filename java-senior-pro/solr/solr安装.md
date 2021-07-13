@@ -84,12 +84,13 @@ bin/solr status
 4、创建code
 
 ```shell
-在./server/solr目录下新建code文件夹，然后复制conf 后，再创建
+在./server/solr目录下新建code文件夹，然后复制conf 后，再创建（将example下的code中的conf目录复制过来）
 
 ## admin控制台创建
 打开solr控制台 http://localhost:8080/solr/index.html#/ 
 选择Core Admin，注意name和instanceDir要跟刚刚创建的文件夹名称一样。
-## 命令行创建
+
+## 命令行创建soooo code
 bin/solr create -c soooo
 ```
 

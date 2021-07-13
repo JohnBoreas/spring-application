@@ -22,3 +22,4 @@ Elasticsearch在数据量较多的情况下速度比Solr快
 集群上SolrCloud比较ES简单
 分词上都支持中文和拼音分词
 Solr webUI更方便观察服务运行情况和调试索引
+
