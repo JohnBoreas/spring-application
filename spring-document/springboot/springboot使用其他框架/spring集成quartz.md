@@ -14,7 +14,7 @@ org.quartz.jobStore.dataSource=
 
 解决：
 
-重新定义`SchedulerFactoryBean`，config配置数据源，需要自定义bean去获取
+（1）重新定义`SchedulerFactoryBean`，config配置数据源，需要自定义bean去获取
 
 ```java
 SchedulerFactoryBean factory = new SchedulerFactoryBean();
@@ -23,6 +23,17 @@ factory.setStartupDelay(5);//延时5秒启动
 factory.setQuartzProperties(quartzProperties());
 // 必须配置数据源, 配置文件无法拿到config里的数据源，需要配置bean来获取
 factory.setDataSource(dataSource);
+```
+
+（2）`SchedulerFactoryBean`可能也会不生效
+
+可以配置：（注意数据库是否区分大小写）
+
+```properties
+org.quartz.dataSource.spiderDataSource.driver=com.mysql.cj.jdbc.Driver
+org.quartz.dataSource.spiderDataSource.URL=
+org.quartz.dataSource.spiderDataSource.user=root
+org.quartz.dataSource.spiderDataSource.password=123456
 ```
 
 

@@ -1,3 +1,9 @@
+1、明确是栈溢出还是堆内存溢出
+
+2、什么导致的溢出
+
+
+
 栈溢出和栈内存溢出的区别
 
 java.lang.StackOverflowError
@@ -5,3 +11,6 @@ java.lang.StackOverflowError
 程序递归导致
 
 链接重定向
+
+
+

@@ -21,7 +21,7 @@
 mybatis.type-aliases-package=com.XXX.model
 
 2、在启动类中添加对 mapper 包扫描`@MapperScan`
-
+启动类中使用了@MapperScan，可以不用使用@Mapper
 3、编写Entity
 
 4、编写Mapper，并使用注释来写SQL

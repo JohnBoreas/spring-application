@@ -3,14 +3,14 @@
 ### 1.查看所有数据库容量大小
 
 ```sql
-select
-table_schema ``as` `'数据库'``,
-sum(table_rows) ``as` `'记录数'``,
-sum(truncate(data_length/1024/1024, 2)) ``as` `'数据容量(MB)'``,
-sum(truncate(index_length/1024/1024, 2)) ``as` `'索引容量(MB)'
-from` `information_schema.tables
-group` `by` `table_schema
-order ``by` `sum(data_length) desc, sum(index_length) desc;
+SELECT
+table_schema AS '数据库',
+SUM(table_rows) AS '记录数',
+SUM(TRUNCATE(data_length/1024/1024, 2)) AS '数据容量(MB)',
+SUM(TRUNCATE(index_length/1024/1024, 2)) AS '索引容量(MB)'
+FROM information_schema.tables
+GROUP BY table_schema
+ORDER BY SUM(data_length) DESC, SUM(index_length) DESC;
 ```
 
 ### 2.查看所有数据库各表容量大小

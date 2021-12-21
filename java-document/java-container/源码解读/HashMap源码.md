@@ -14,7 +14,11 @@ put过程：
 
 1、利用key的hashCode 计算hash确定元素在数组中的下标
 
-2、hash相同的key，(1)key相同，覆盖原始值；(2)key不同（hash冲突），放入链表中
+2、hash相同的key，
+
+(1)key相同，覆盖原始值；
+
+(2)key不同（hash冲突），放入链表中
 
 3、链表长度>8转红黑树
 
