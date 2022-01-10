@@ -11,6 +11,8 @@
     <file url="file://$PROJECT_DIR$/java-senior-pro/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java-senior-pro/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/message-queue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/message-queue/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/message-queue/src/main/resources" charset="UTF-8" />
@@ -24,8 +26,12 @@
     <file url="file://$PROJECT_DIR$/spring-document/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-document/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sql-document" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sql-document/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sql-document/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/work-document" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/work-document/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/work-document/src/main/resources" charset="UTF-8" />
   </component>
 </project>

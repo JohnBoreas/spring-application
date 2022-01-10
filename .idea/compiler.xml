@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cnblogs" />
+        <module name="message-queue" />
+        <module name="java-senior-pro" />
+        <module name="javaweb" />
+        <module name="spring-boot-mq" />
         <module name="sql-document" />
         <module name="work-document" />
-        <module name="javatools" />
-        <module name="cnblogs" />
-        <module name="java-tools" />
-        <module name="message-queue" />
         <module name="java-web" />
-        <module name="java-senior-pro" />
-        <module name="spring-boot-mq" />
-        <module name="javaweb" />
+        <module name="javatools" />
+        <module name="java-tools" />
         <module name="spring-document" />
       </profile>
     </annotationProcessing>
