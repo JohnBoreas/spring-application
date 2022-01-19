@@ -1,4 +1,4 @@
-一、MySQL中varchar与char的区别以及varchar(50)中的50代表的涵义
+#### 一、MySQL中varchar与char的区别以及varchar(50)中的50代表的涵义
 
 **（1）varchar与char的区别**
 
@@ -20,7 +20,7 @@ char：最大255，自动删除末尾空格，长度不可变
 
 
 
-二、MySQL字段类型括号含义：int(11)，bigint(20)
+#### 二、MySQL字段类型括号含义：int(11)，bigint(20)
 
 1、int(11)中，11代表的并不是长度，而是字符的显示宽度
 
@@ -53,7 +53,7 @@ INSERT INTO int_demo (a, b, c, d, e) VALUES (1234567890, 1234567890, 1234567890,
 
 
 
-三、时间
+#### 三、时间
 
 datetime：8字节，毫秒
 
