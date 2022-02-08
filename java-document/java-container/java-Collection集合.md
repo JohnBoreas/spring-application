@@ -1,4 +1,4 @@
-Map接口和Collection接口是所有集合框架的父接口：
+ Map接口和Collection接口是所有集合框架的父接口：
 
 ```
 Collection接口的子接口包括：Set接口和List接口
@@ -39,6 +39,18 @@ ArrayList 和 Vector 的区别是什么？
 ## 线程安全：Vector 使用了 Synchronized 来实现线程同步，是线程安全的，而 ArrayList 是非线程安全的。
 ## 性能：ArrayList 在性能方面要优于 Vector。
 ## 扩容：ArrayList 和 Vector 都会根据实际的需要动态的调整容量，只不过在 Vector 扩容每次会增加 1 倍，而 ArrayList 只会增加 50%。
+```
+
+ArrayList 和 HashSet的区别
+
+```
+1.HashSet 是不重复的 而且是无序的!
+唯一性保证. 重复对象equals方法返回为true ，重复对象hashCode方法返回相同的整数
+HashSet其实就是一个HashMap,只是你只能通过Set接口操作这个HashMap的key部分,
+
+2.ArrayList是可重复的 有序的
+特点：查询效率高H，增删效率低 轻量级 线程不安全。
+arraylist：在数据的插入和删除方面速度不佳，但是在随意提取方面较快
 ```
 
 HashMap和HashTable的区别是什么？
