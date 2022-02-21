@@ -39,3 +39,4 @@ windows上面用任务管理器看，linux下可以用 top 这个工具看。
 4、使用jstack工具将进程信息打印输出，jstack pid号 > /tmp/t.dat，比如jstack 31365 > /tmp/t.dat
 
 5、编辑/tmp/t.dat文件，查找线程号对应的信息
+

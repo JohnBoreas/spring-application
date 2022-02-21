@@ -6,7 +6,6 @@ import org.openqa.selenium.interactions.Actions;
 
 /**
  * webdriver 鼠标动作
- * @author xuhua.jiang
  * @date 20210115
  */
 public class WebDriverActionsUtil {
