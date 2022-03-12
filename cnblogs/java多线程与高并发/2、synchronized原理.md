@@ -155,3 +155,15 @@ Java SE 1.6为了减少获得锁和释放锁带来的性能消耗，引入了“
 2）保证共享变量的修改能够及时可见
 
 3）有效解决重排序问题。
+
+
+
+6、Synchonized区别ReentrantLock 
+
+ReentrantLock 有如下特点：
+
+1. 可重入 ReentrantLock 和 syncronized 关键字一样，**都是可重入锁**，不过两者实现原理稍有差别， RetrantLock 利用 **AQS** 的的 state 状态来判断资源是否已锁，同一线程重入加锁， state 的状态 +1 ; 同一线程重入解锁, state 状态 -1 (解锁必须为当前独占线程，否则异常); 当 state 为 0 时解锁成功。
+2. **需要手动加锁、解锁** synchronized 关键字是自动进行加锁、解锁的，而 ReentrantLock 需要 lock() 和 unlock() 方法配合 try/finally 语句块来完成，来手动加锁、解锁。
+3. 支持**设置锁的超时时间** synchronized 关键字无法设置锁的超时时间，如果一个获得锁的线程内部发生死锁，那么其他线程就会一直进入阻塞状态，而 ReentrantLock **提供 tryLock 方法**，允许设置线程获取锁的超时时间，如果超时，则跳过，不进行任何操作，避免死锁的发生。
+4. **支持公平/非公平锁** synchronized 关键字是一种非公平锁，先抢到锁的线程先执行。而 ReentrantLock 的构造方法中允许设置 true/false 来实现公平、非公平锁，如果设置为 true ，则线程获取锁要遵循"先来后到"的规则，每次都会构造一个线程 Node ，然后到双向链表的"尾巴"后面排队，等待前面的 Node 释放锁资源。
+5. 可中断锁 ReentrantLock 中的 lockInterruptibly() 方法使得线程**可以在被阻塞时响应中断**，比如一个线程 t1 通过 lockInterruptibly() 方法获取到一个可重入锁，并执行一个长时间的任务，另一个线程通过 interrupt() 方法就可以立刻打断 t1 线程的执行，来获取t1持有的那个可重入锁。而通过 ReentrantLock 的 lock() 方法或者 Synchronized 持有锁的线程是不会响应其他线程的 **interrupt**() 方法的，直到该方法主动释放锁之后才会响应 interrupt() 方法。

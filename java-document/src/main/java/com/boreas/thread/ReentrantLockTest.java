@@ -16,6 +16,8 @@ public class ReentrantLockTest {
             lock.lock();// lock加锁
             // 1：wait 方法等待：
             System.out.println("开始wait");
+            lock.tryLock();
+            lock.lockInterruptibly();
             condition.await();
             // 通过创建Condition对象来使线程wait，必须先执行lock.lock方法获得锁
             // 2：signal方法唤醒condition.signal();

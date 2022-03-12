@@ -1,7 +1,6 @@
 package com.boreas.jvm;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 /**
  * @author boreas
@@ -20,7 +19,29 @@ public class OverStackOrHeap {
     /**
      * java.lang.StackOverflowError
      */
-    public void stack() {
-        stack();
+    public void stack(int i) {
+        stack(i);
+        i ++;
+    }
+
+
+    public static void main(String[] args) {
+        OverStackOrHeap heap = new OverStackOrHeap();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OverStackOrHeap heap = new OverStackOrHeap();
+                int i = 0;
+                heap.stack(i);
+                System.out.println(i);
+            }
+        });
+        thread.start();
+        try {
+            Thread.sleep(10000);
+            System.out.println("1111111111111");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

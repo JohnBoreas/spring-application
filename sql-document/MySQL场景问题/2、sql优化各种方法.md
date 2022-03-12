@@ -164,3 +164,4 @@ show WARNINGS;
 2、delete in子查询走索引;**加别名呢**，会走**LooseScan策略**，而LooseScan策略，本质上就是**semi join子查询**的一种执行策略。
 
 **LooseScan是什么呢？** 其实它是一种策略，是**semi join子查询**的一种执行策略。
+

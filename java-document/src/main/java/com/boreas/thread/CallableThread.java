@@ -11,7 +11,10 @@ import java.util.concurrent.*;
 public class CallableThread implements Callable<String> {
     @Override
     public String call() throws Exception {
+        Thread.sleep(2000);
+        System.out.println("call start");
         Thread.sleep(50000);
+        System.out.println(1111111);
         return "Callable";
     }
 
@@ -24,6 +27,7 @@ public class CallableThread implements Callable<String> {
         Thread thread = new Thread(futureTask);
         // 启动线程
         thread.start();
+        System.out.println("callableThread start");
         String result = null;
         try {
             // 获取线程执行结果
@@ -34,9 +38,12 @@ public class CallableThread implements Callable<String> {
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
+            futureTask.cancel(true);// 尝试中断
+            System.out.println("canel");
             e.printStackTrace();
         }
         System.out.println(thread.isAlive());
+        System.out.println(futureTask.isDone());
         System.out.println(result);
     }
 }

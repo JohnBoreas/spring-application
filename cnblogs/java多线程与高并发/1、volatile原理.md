@@ -88,6 +88,14 @@ StoreLoadBarrier	  LoadStoreBarrier
 
 单例需不需要加volatile
 
+new 一个对象过程
+
+1、分配内存
+
+2、调用构造函数
+
+3、指向引用地址
+
 ```java
 ## 双重检查（double-checked）
 class Singleton {
