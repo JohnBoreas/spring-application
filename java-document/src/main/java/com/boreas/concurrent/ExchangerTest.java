@@ -9,10 +9,13 @@ import java.util.concurrent.Exchanger;
  * @create 2020-04-13 17:39
  */
 public class ExchangerTest {
+    public static void main(String[] args) {
+        ExchangerTest.exchangerTest();
+    }
     /**
      * Exchanger : 用于两个线程之间进行数据交换，线程会堵塞在exchange()，直到另一个线程也同时到达该方法
       */
-    public  void exchangerTest() {
+    public static void exchangerTest() {
         final Exchanger<List<Integer>> exchanger = new Exchanger<>();
 
         new Thread(new Runnable() {
