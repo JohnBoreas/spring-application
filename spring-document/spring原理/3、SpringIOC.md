@@ -13,21 +13,21 @@ spring ioc指的是控制反转，IOC容器负责实例化、定位、配置应�
 
 Spring的IOC实现步骤解析：
 
-\1. 加载并且保存Spring配置文件路径信息然后保存到configLocation中
+1、加载并且保存Spring配置文件路径信息然后保存到configLocation中
 
-\2. 刷新Spring上下文环境
+2、 刷新Spring上下文环境
 
-\3. 创建并且载入DefaultListableBeanFactory（即BeanFactory）
+3、创建并且载入DefaultListableBeanFactory（即BeanFactory）
 
-\4. 根据DefaultListableBeanFactory创建XMLBeanDefinitionReader，用于后面读取xml配置文件信息
+4、根据DefaultListableBeanFactory创建XMLBeanDefinitionReader，用于后面读取xml配置文件信息
 
-\5. 创建BeanDefinitionDelegate代理类，用于解析xml配置信息
+5、创建BeanDefinitionDelegate代理类，用于解析xml配置信息
 
-\6. 解析xml中配置的<import>、<bean>、<beans>、<alias>等不同的标签信息，以便于可以使用不同的解析器进行解析
+6、解析xml中配置的<import>、<bean>、<beans>、<alias>等不同的标签信息，以便于可以使用不同的解析器进行解析
 
-\7. 通过XMLBeanDefinitionReader结合location路径信息读取Resources资源信息
+7、通过XMLBeanDefinitionReader结合location路径信息读取Resources资源信息
 
-\8. 使用BeanDefinitionDelegate代理类解析Bean元素并且依次进行实例化操作，实例化完毕之后将Bean信息注册（put）到BeanDefinitionMap中以便于可以下次继续使用
+8、使用BeanDefinitionDelegate代理类解析Bean元素并且依次进行实例化操作，实例化完毕之后将Bean信息注册（put）到BeanDefinitionMap中以便于可以下次继续使用
 
 
 

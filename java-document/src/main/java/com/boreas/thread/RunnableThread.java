@@ -12,7 +12,7 @@ public class RunnableThread implements Runnable {
         System.out.println("RunnableThread");
         while (true) {
             try {
-                Thread.sleep(3111);
+                Thread.sleep(30111);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -26,6 +26,7 @@ public class RunnableThread implements Runnable {
         Thread thread = new Thread(runnableThread);
         // 启动线程
         thread.start();
+        System.out.println(thread.getState().name());
         thread.interrupt();
         try {
             thread.join();

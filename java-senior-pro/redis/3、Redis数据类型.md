@@ -20,7 +20,7 @@
 #define OBJ_HASH 4
 ```
 
-
+![图片](..\resource\redis结构.png)
 
 ##### 一、String
 
