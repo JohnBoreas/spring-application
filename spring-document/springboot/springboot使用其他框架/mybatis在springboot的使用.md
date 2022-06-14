@@ -102,7 +102,9 @@ Mapper开发
 @delete 负责删除
 ```
 
-**注意，使用#符号和$符号的不同：**
+**注意**
+
+（1）**使用#符号和$符号的不同：**
 
 ```java
 // This example creates a prepared statement, something like select * from teacher where name = ?;
@@ -113,3 +115,11 @@ Teacher selectTeachForGivenName(@Param("name") String name);
 @Select("Select * from teacher where name = '${name}'")
 Teacher selectTeachForGivenName(@Param("name") String name);
 ```
+
+（2）大小写区分
+
+```xml
+数据库是小写，这里大写，会不识别，估计是否还有其他配置
+<sql id="table"> TABLE </sql>
+```
+

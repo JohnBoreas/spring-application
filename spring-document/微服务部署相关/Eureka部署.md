@@ -16,7 +16,9 @@ This application has no explicit mapping for /error, so you are seeing this as a
 
 
 
-配置
+3、项目配置
+
+application.properties
 
 ```properties
 spring.application.name=equinox-discovery

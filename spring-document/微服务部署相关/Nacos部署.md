@@ -1,6 +1,18 @@
+
+
 一、数据库
 
 nacos支持配置多个数据库，通过 *db.num* 和 *db.url.index*的配置来控制。
+
+application.properties
+
+```shell
+### Count of DB:
+db.num=1
+db.url.0=jdbc:mysql://192.168.16.102:3306/equinox_nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+db.user.0=root
+db.password.0=123456
+```
 
 
 
@@ -26,15 +38,9 @@ export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 192.168.223.7:8848
 ```
 
-2、配置application.properties
+2、配置3、启动
 
-```shell
-### Count of DB:
-db.num=1
-db.url.0=jdbc:mysql://192.168.16.102:3306/equinox_nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
-db.user.0=root
-db.password.0=123456
-```
+bash startup.sh
 
 
 
@@ -62,3 +68,10 @@ spring.cloud.nacos.discovery.group=discovery-group
 
 只能作为配置中心
 
+
+
+六、存在问题
+
+（1）报错：failed to req API:/nacos/v1/ns/instance after all servers
+
+进入nacos/data目录，删除文件，后重启解决
