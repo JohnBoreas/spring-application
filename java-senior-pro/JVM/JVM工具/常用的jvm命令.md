@@ -39,6 +39,12 @@ jstat -gcutil 9 1000 10
 
 
 
+free -m
+
+查看系统内存使用情况
+
+
+
 ```
 # 第一步先top 找出 哪个java进程占用率最高
 top

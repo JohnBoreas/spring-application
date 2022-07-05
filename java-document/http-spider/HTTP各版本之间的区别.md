@@ -1,6 +1,6 @@
 HTTP 协议是基于 **TCP/IP**，并且使用了「**请求 - 应答**」的通信模式
 
-![img](../\resource\http协议区别.png)
+![img](..\resource\http协议区别.png)
 
 HTTP1.0
 

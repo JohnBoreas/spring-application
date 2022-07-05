@@ -17,6 +17,8 @@ public static Object executeScriptGetData(WebDriver webDriver, String js) {
 4、get的Item不一定就叫token，得具体看目标系统把token存到哪个变量中
 ```
 
+
+
 2、webdriver反爬虫
 
 window.navigator.webdriver
@@ -30,16 +32,19 @@ options.setExperimentalOption("excludeSwitches", new Object[]{"enable-automation
 driver = new ChromeDriver(options);
 ```
 
+
+
 3、webdriver打开已有浏览器
 
 ```java
-1、打开 windows cmd 进入chrome安装目录。
-cd C:\Program Files (x86)\Google\Chrome\Application
-
-2、启动 chrome 程序，同时开启 remote-debugging-port 参数。
-chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\selenum\chrome_userdata"
+1、谷歌浏览器路径下打开cmd，执行以下代码。
+chrome.exe --remote-debugging-port=9527 --user-data-dir="C:\selenum\chrome_userdata"
  
-3、代码
+2、代码中加入
+options = Options()
+options.add_experimental_option("debuggerAddress", "127.0.0.1:9527")
+bro = webdriver.Chrome(options=options)    
+
 ChromeOptions options = new ChromeOptions();
 options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222"); //(1)
 ```

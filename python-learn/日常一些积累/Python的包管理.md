@@ -14,3 +14,16 @@ python -m pip install --upgrade SomePackage
 D:\Python\python.exe -m pip install nonebot-adapter-cqhttp
 ```
 
+
+
+python库
+
+```shell
+## 跨平台计算机视觉库
+python.exe -m pip install opencv-python
+## GUI 自动化工具，自动控制鼠标和键盘
+python.exe -m pip install PyAutoGUI
+## PIL图像处理库
+python.exe -m pip install Pillow
+```
+

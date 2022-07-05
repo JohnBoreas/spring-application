@@ -34,6 +34,7 @@ exec : 执行所有事务块的命令 （ 一旦执行exec后，之前加的监�
 discard : 取消事务，放弃事务块中的所有命令
 
 unwatch : 取消watch对所有key的监控
+
 ```
 
  **Redis事务具有以下特点：**

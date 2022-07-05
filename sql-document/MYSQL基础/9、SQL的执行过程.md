@@ -17,3 +17,7 @@ SQL 的大概的执行过程。
 优化器
 
 ![img](..\resource\sql优化器.jpg)
+
+
+
+<img src="..\resource\SQL解析流程.awebp" alt="img" style="zoom:60%;" />

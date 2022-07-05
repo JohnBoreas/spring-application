@@ -11,6 +11,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/java-tools/src/main/java/com/boreas/leetcode/editor/cn/ConstructBinaryTreeFromInorderAndPostorderTraversal.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/java-tools/src/main/java/com/boreas/leetcode/editor/cn/ConstructBinaryTreeFromInorderAndPostorderTraversal.java" />
+              <option name="questionId" value="106" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/java-tools/src/main/java/com/boreas/leetcode/editor/cn/MergeSortedArray.java">
           <value>
             <LeetcodeEditor>
