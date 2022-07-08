@@ -26,7 +26,7 @@ channel.queueDeclare(QUEUE_NAME, true, false, false, null);
 // 交换机名称，路由key,简单模式可以传递队列名称, 消息其它属性, 消息内容
 channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"");
 //发送消息
-channel.basicPublish(EXCHANGE_NAME, QUEUE_NAME, properties, message);
+channel.basicPublish(EXCHANGE_NAME, 路由key or QUEUE_NAME, properties, message);
 ```
 
 
