@@ -22,6 +22,10 @@ Cancel阶段：取消执行，释放Try阶段预留的业务资源，Cancel操�
 
 
 
+<img src="..\..\resource\TCC补偿.png" style="zoom:77%;" />
+
+
+
 
 
 **优缺点**

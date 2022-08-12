@@ -18,7 +18,7 @@ PreCommit
 
 DoCommit
 
-
+<img src="..\..\resource\3cp.png" style="zoom:67%;" />
 
 CanCommit阶段 
 
