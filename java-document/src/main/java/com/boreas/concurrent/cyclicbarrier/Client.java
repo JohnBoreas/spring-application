@@ -18,6 +18,7 @@ public class Client {
         executor.execute(new TravelTask(cyclicBarrier,"哈登",5));
         executor.execute(new TravelTask(cyclicBarrier,"保罗",3));
         executor.execute(new TravelTask(cyclicBarrier,"戈登",1));
+
     }
 
 }

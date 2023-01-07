@@ -8,7 +8,7 @@
 - [`UPDATE ... WHERE ...`](https://dev.mysql.com/doc/refman/5.6/en/update.html)在搜索遇到的每条记录上设置一个排他的 next-key 锁。但是，对于使用唯一索引锁定行以搜索唯一行的语句，只需要一个索引记录锁。
 - 修改聚集索引记录时[`UPDATE`](https://dev.mysql.com/doc/refman/5.6/en/update.html)，会对受影响的二级索引记录进行隐式锁定。[`UPDATE`](https://dev.mysql.com/doc/refman/5.6/en/update.html)在插入新的二级索引记录之前执行重复检查扫描以及插入新的二级索引记录时， 该 操作也会对受影响的二级索引记录进行共享锁。
 - [`DELETE FROM ... WHERE ...`](https://dev.mysql.com/doc/refman/5.6/en/delete.html)在搜索遇到的每条记录上设置一个排他的 next-key 锁。但是，对于使用唯一索引锁定行以搜索唯一行的语句，只需要一个索引记录锁。
-- [`INSERT`](https://dev.mysql.com/doc/refman/5.6/en/insert.html)在插入的行上设置排他锁。这个锁是索引记录锁，不是next-key锁（即没有间隙锁），并且不会阻止其他会话在插入行之前插入到间隙中。
+-  
 
 
 
@@ -29,6 +29,10 @@
   - 间隙锁（分 S 锁和 X 锁）
   - Next-key 锁（分 S 锁和 X 锁）
   - 插入意向锁
+    - LOCK_ORDINARY：也称为 **Next-Key Lock**，锁一条记录及其之前的间隙，这是 RR 隔离级别用的最多的锁，从名字也能看出来；
+    - LOCK_GAP：间隙锁，锁两个记录之间的 GAP，防止记录插入；
+    - LOCK_REC_NOT_GAP：只锁记录；
+    - LOCK_INSERT_INTENSION：插入意向 GAP 锁，插入记录时使用，是 LOCK_GAP 的一种特例。
 - 行锁分析
   - 行锁都是加在索引上的，最终都会落在聚簇索引上；
   - 加行锁的过程是一条一条记录加的；
