@@ -93,6 +93,12 @@
             <artifactId>j2v8_win32_x86_64</artifactId>
             <version>4.6.0</version>
         </dependency>
+        <!-- cglib动态代理 -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>3.2.4</version>
+        </dependency>
 
     </dependencies>
 

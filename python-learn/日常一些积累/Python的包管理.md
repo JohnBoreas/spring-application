@@ -16,6 +16,12 @@ D:\Python\python.exe -m pip install nonebot-adapter-cqhttp
 
 
 
+问题：
+
+1、不能使用代理下载，会链接失败
+
+
+
 python库
 
 ```shell

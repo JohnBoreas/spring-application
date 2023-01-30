@@ -1,4 +1,22 @@
-mysql锁进行划分：
+一、锁分类
+
+mysql锁分成两类：锁类型（lock_type）和锁模式（lock_mode）
+
+（1）锁模式
+
+- LOCK_IS：读意向锁；
+- LOCK_IX：写意向锁；
+- LOCK_S：读锁；
+- LOCK_X：写锁；
+- LOCK_AUTO_INC：自增锁；
+
+（2）锁类型
+
+表锁和行锁
+
+
+
+二、mysql锁进行划分：
 
 1、按照锁的粒度划分：行锁、表锁、页锁
 

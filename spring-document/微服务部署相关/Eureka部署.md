@@ -38,3 +38,24 @@ eureka.client.fetch-registry=true
 
 ```
 
+
+
+4、配置集群注册中心地址
+
+application.properties
+
+```properties
+spring.application.name=service-order
+server.port=6001
+# 应用实例主机名
+eureka.instance.hostname=127.0.0.1
+eureka.client.serviceurl.defaultZone=http://${eureka.instance.hostname}:8001/eureka/,http://${eureka.instance.hostname}:8002/eureka/,http://${eureka.instance.hostname}:8003/eureka/
+```
+
+
+
+5、Eureka端點
+
+http://localhost:8001/eureka/apps/eureka-server
+
+非JVM项目可以利用rest端点操控
