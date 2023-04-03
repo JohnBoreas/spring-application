@@ -61,6 +61,7 @@ printf '%x\n' 24624 输出：66030
 # 使用jstack -l pid（进程的）|grep 16进制（top- Hp线程PID）查找堆栈
 jstack -l 24525 |grep 66030
 输出堆栈信息，结合源码进行原因查找
+
 使用jmap分析java进程的内存占用分析
 使用jmap会导致系统STW
 jmap -histo 进程ID |head 20

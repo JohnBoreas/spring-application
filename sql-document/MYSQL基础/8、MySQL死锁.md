@@ -10,7 +10,28 @@ A阻塞B，B阻塞A，造成循环等待
 
 3、一个事务修改多个表
 
+4、当事务锁定多个表中的行（通过 [`UPDATE`](https://dev.mysql.com/doc/refman/8.0/en/update.html) or 之类的语句[`SELECT ... FOR UPDATE`](https://dev.mysql.com/doc/refman/8.0/en/select.html)）但顺序相反时，可能会发生死锁
 
+
+
+死锁日志查询
+
+```sql
+SELECT @@log_error;
+```
+
+
+
+##### 禁用死锁检测
+
+在高并发系统上，当大量线程等待同一个锁时，死锁检测会导致速度减慢。[`innodb_lock_wait_timeout`](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_lock_wait_timeout) 有时，禁用死锁检测并依赖发生死锁时事务回滚的设置可能更有效 。可以使用该 [`innodb_deadlock_detect`](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_deadlock_detect) 变量禁用死锁检测。
+
+生产配置
+
+```
+innodb_lock_wait_timeout	20
+innodb_print_all_deadlocks	ON
+```
 
 二、避免死锁
 
@@ -24,7 +45,7 @@ A阻塞B，B阻塞A，造成循环等待
 
 
 
-mysql文档对死锁的一个处理：
+### mysql文档对死锁的一个处理：
 
 `InnoDB`使用自动行级锁定。即使在仅插入或删除单行的事务的情况下，您也可能会出现死锁。那是因为这些操作并不是真正的“原子”；它们会自动对插入或删除的行的（可能是多个）索引记录设置锁定。
 

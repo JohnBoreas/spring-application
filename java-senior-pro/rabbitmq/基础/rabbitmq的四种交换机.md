@@ -43,7 +43,5 @@ System.out.println("已发送消息：" + message);
 message = "删除了商品。Topic模式；routing key 为 item.delete" ;
 channel.basicPublish(TOPIC_EXCHAGE, "item.delete", null, message.getBytes());
 
-
-
 ```
 
